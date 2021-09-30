@@ -46,22 +46,22 @@ typedef struct
 } output_status_t;
 
 /**
- * @brief  Bitfield representing driver diagnostic mode configuration
+ * @brief  Bitfield representing driver diagnosis mode configuration
  * Writing a 0 sets the corresponding output in no Latch Mode.
  * Writing a 1 sets the corresponding output in Latch Mode.
  */
 typedef struct
 {
-    uint8_t diag_1 : 1;
-    uint8_t diag_2 : 1;
-    uint8_t diag_3 : 1;
-    uint8_t diag_4 : 1;
-    uint8_t diag_5 : 1;
-    uint8_t diag_6 : 1;
-    uint8_t diag_7 : 1;
-    uint8_t diag_8 : 1;
+    uint8_t diagnosis_1 : 1;
+    uint8_t diagnosis_2 : 1;
+    uint8_t diagnosis_3 : 1;
+    uint8_t diagnosis_4 : 1;
+    uint8_t diagnosis_5 : 1;
+    uint8_t diagnosis_6 : 1;
+    uint8_t diagnosis_7 : 1;
+    uint8_t diagnosis_8 : 1;
 
-} diag_mode_t;
+} diagnosis_mode_t;
 
 /**
  * @brief  Bitfield representing driver overcurrent protection configuration
@@ -92,7 +92,7 @@ typedef enum
 } fault_status_e;
 
 /**
- * @brief  Structure representing a fault report.
+ * @brief  Structure representing a fault report for each output channel.
  *
  */
 typedef struct
@@ -116,12 +116,12 @@ typedef struct
 void writeOutputStatusConfiguration(const output_status_t const* in_ptConfig, fault_report_t const* out_ptStatus);
 
 /**
- * @brief  Programs the chip with a diagnostic mode configuration. Returns fault report.
+ * @brief  Programs the chip with a diagnosis mode configuration. Returns fault report.
  *
- * @param  in_ptConfig : diagnostic mode configuration
+ * @param  in_ptConfig : diagnosis mode configuration
  * @param  out_ptStatus : fault status report
  */
-void writeDianosticModeConfiguration(const diag_mode_t const* in_ptConfig, fault_report_t const* out_ptStatus);
+void writeDianosticModeConfiguration(const diagnosis_mode_t const* in_ptConfig, fault_report_t const* out_ptStatus);
 
 /**
  * @brief  Programs the chip with an overcurrent protection configuration. Returns fault report.
