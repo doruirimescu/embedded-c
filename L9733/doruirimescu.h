@@ -111,24 +111,30 @@ typedef struct
  * @brief  Programs the chip with an output status configuration. Returns fault report.
  *
  * @param  in_ptConfig : output status configuration
- * @param  out_ptStatus : fault status report
+ * @param  out_ptReport : fault status report
  */
-void writeOutputStatusConfiguration(const output_status_t const* in_ptConfig, fault_report_t const* out_ptStatus);
+void writeOutputStatusConfiguration(const output_status_t const* in_ptConfig, fault_report_t const* out_ptReport);
 
 /**
  * @brief  Programs the chip with a diagnosis mode configuration. Returns fault report.
  *
  * @param  in_ptConfig : diagnosis mode configuration
- * @param  out_ptStatus : fault status report
+ * @param  out_ptReport : fault status report
  */
-void writeDianosticModeConfiguration(const diagnosis_mode_t const* in_ptConfig, fault_report_t const* out_ptStatus);
+void writeDianosticModeConfiguration(const diagnosis_mode_t const* in_ptConfig, fault_report_t const* out_ptReport);
 
 /**
  * @brief  Programs the chip with an overcurrent protection configuration. Returns fault report.
  *
  * @param  in_ptConfig : overcurrent protection configuration
- * @param  out_ptStatus : fault status report
+ * @param  out_ptReport : fault status report
  */
-void writeOvercurrentProtectionConfiguration(const overcurrent_protection_t const* in_ptConfig, fault_report_t const* out_ptStatus);
+void writeOvercurrentProtectionConfiguration(const overcurrent_protection_t const* in_ptConfig, fault_report_t const* out_ptReport);
 
+/**
+ * @brief  Reads the current fault report from the chip
+ *
+ * @param  out_ptReport : fault status report
+ */
+void getFaultReport(fault_report_t const* out_ptReport);
 #endif
